@@ -18,14 +18,14 @@ img.bg {
 a {
     color: #00B7FF;
 }
-h1 {
+div.jumbotron h1 {
     font-family: 'Raleway', sans-serif;
-    font-size: 60px;
+    font-size: 45px;
 }
 div.jumbotron{
-    margin-top: 50px;
     background-color: rgba(255,255,255, 0.4) !important;
-    margin: 50px 100px 20px 100px;
+    /*margin: 30px 200px 20px 200px;*/
+    margin: 2% 20%;
     padding: 30px;
 }
 .form-control{
@@ -40,9 +40,6 @@ div.jumbotron{
 .label{
     background-color: #abc984;
 }
-#todo-list{ 
-    margin-bottom:30px; 
-}
 .btn.btn-primary{
     background-color: #6790b5;
     border-color: black;
@@ -52,13 +49,34 @@ div.jumbotron{
     color: white;
     border-color: black;
 }
+.btn.btn-primary:focus{
+    border-color: black;
+    box-shadow: none;
+    outline: none;
+}
+#todo-list{ 
+    font-size: 18px;
+    font-family: 'Raleway', sans-serif;
+    background-color: rgba(255,255,255, 0.4) !important;
+    border-radius: 6px;
+    margin: 10px;    
+}
+.checkbox label{
+    font-weight: bold;
+    font-size: 18px;
+    width: 100%;
+}
+#inner-todo{
+    margin-left: 10px;
+    font-weight: bold;
+}
 p {
     font-style: italic;
     color: white;
     font-size: 18px;
     font-family: 'Raleway', sans-serif;
     bottom: 0;
-    left: 0;
+    right: 0;
     position: fixed;
     margin: 20px;
 }

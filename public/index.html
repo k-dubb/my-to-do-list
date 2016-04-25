@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My To Do List</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <link rel='stylesheet' href='/stylesheets/style.css'>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
@@ -13,11 +14,17 @@
 
     <!-- SET THE CONTROLLER AND GET ALL TODOS -->
 <body ng-controller="mainController">
+    <img src="images/path.jpg" class="bg">
+<!--     <section class="background_image" style="background-image: url('images/path.jpg')">
+ -->
     <div class="container">
 
         <!-- HEADER AND TODO COUNT -->
-        <div class="jumbotron text-center">
-            <h1>I'm a Todo-aholic <span class="label label-info">{{ todos.length }}</span></h1>
+        <!-- <div class="contain"> -->
+        <div class="jumbotron text-center">        
+            <!-- <div class="jumbotron-inside"> -->
+                <h1>Things I need to do: <span class="label label-info">{{ todos.length }}</span></h1>
+            <!-- </div> -->
         </div>
 
         <!-- TODO LIST -->
@@ -37,21 +44,31 @@
         <!-- FORM TO CREATE TODOS -->
         <div id="todo-form" class="row">
             <div class="col-sm-8 col-sm-offset-2 text-center">
-                <form>
+
+                <form class="form-inline">
                     <div class="form-group">
 
                         <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
-                        <input type="text" class="form-control input-lg text-center" placeholder="I want to buy a puppy that will love me forever" ng-model="formData.text">
+                        <input type="text" class="form-control input-lg text-center" placeholder="Add item" ng-model="formData.text">
                     </div>
 
                     <!-- createToDo() WILL CREATE NEW TODOS -->
                     <button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Add</button>
+
+                    <!-- </div> -->
+
                 </form>
             </div>
         </div>
 
-    </div>
+        <div id="todo-delete" class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <p>(Click the checkbox to delete an item)</p>
+            </div>
+        </div>
 
+    </div>
+<!-- </section> -->
 
 </body>
 </html>

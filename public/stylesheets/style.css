@@ -1,20 +1,64 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+img.bg {
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
 
+  z-index: -1;
+}
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+  img.bg {
+    left: 50%;
+    margin-left: -512px;   /* 50% */
+  }
+}
 a {
-  color: #00B7FF;
+    color: #00B7FF;
 }
-
-html{ 
-    overflow-y:scroll; 
-}        
-
-body{ 
-    padding-top:50px; 
+h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 60px;
 }
-
+div.jumbotron{
+    margin-top: 50px;
+    background-color: rgba(255,255,255, 0.4) !important;
+    margin: 50px 100px 20px 100px;
+    padding: 30px;
+}
+.form-control{
+    width: 300px;
+    margin: 0 10px;
+    border-color: black;
+}
+.form-control:focus{
+    border-color: black;
+    box-shadow: none;
+}
+.label{
+    background-color: #abc984;
+}
 #todo-list{ 
     margin-bottom:30px; 
+}
+.btn.btn-primary{
+    background-color: #6790b5;
+    border-color: black;
+}
+.btn.btn-primary:hover{
+    background-color: black;
+    color: white;
+    border-color: black;
+}
+p {
+    font-style: italic;
+    color: white;
+    font-size: 18px;
+    font-family: 'Raleway', sans-serif;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    margin: 20px;
 }

@@ -15,6 +15,7 @@
 <body ng-controller="mainController">
     <img src="images/path.jpg" class="bg">
 
+
     <div class="container">
         <!-- HEADER AND TODO COUNT -->
         <div class="jumbotron text-center">        
@@ -46,6 +47,18 @@
                 </div>
             </div>
         </div>
+        
+        <!-- Change the background image -->
+        <div class="col-sm-4 col-sm-offset-4" >
+            <div class="checkbox" ng-repeat="photo in photos">
+                <label>
+                    <input type="checkbox" ng-model="photo.checked" ng-click="choosePhoto($index, photos)"> {{photo.type}} 
+                    <span ng-show="photo.checked">
+                        <img src="{{photo.url}}" class="bg">
+                    </span>
+               </label>
+            </div>
+        </div>                
 
         <div id="todo-delete" class="row">
             <div class="col-sm-8 col-sm-offset-2 text-center">

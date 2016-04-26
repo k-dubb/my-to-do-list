@@ -1,6 +1,3 @@
-// (function() {
-
-// module = myTodo
 var myTodo = angular.module('myTodo', []);
 
 function mainController($scope, $http) {
@@ -41,5 +38,60 @@ function mainController($scope, $http) {
             });
     };
 
+    $http.get('/api/photos')
+        .success(function(data) {
+            $scope.photos = data;
+            console.log(data);
+        })
+        .error(function(data) {
+            console.log('Error: ' + data);
+        });
+
+
+
+    // $scope.showPhoto = function(){
+    //     return photo.url;
+    //     console.log(photo.url)
+
+    // }
+
+        // toggle between checkboxes when choosing background image
+    $scope.choosePhoto = function(position, photos) {
+
+        angular.forEach(photos, function(photo, index) {
+            if (position != index) {
+                photo.checked = false;
+            }
+            
+        });
+    }
+
+    //     $http.get('/api/photos/' + id)
+    //         .success(function(data) {
+    //             $scope.photos = data;
+    //             console.log(data);
+    //         })
+    //         .error(function(data) {
+    //             console.log('Error: ' + data);
+    //         });
+    // };
+
+      //   $http({
+      //       method: 'GET',
+      //       url: '/api/photos' + id
+      //   }).then(function successCallback(response) {
+      //   console.log('success', response.data);
+
+      // self.photos = response.data;
+
+      // self.currentPhoto = {
+      //   type:
+      //   url:
+      // }
+
+        // var picture = this.photo.type;
+
+
+
+
 }
-// })();

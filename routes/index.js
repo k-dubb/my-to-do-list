@@ -5,7 +5,7 @@ var Photo = require('../models/photos');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'myTodo' });
 });
 
 // get all todo items

@@ -1,0 +1,26 @@
+<div ng-controller="MainController">
+        
+    <div class="toOtherPage">
+        <button ui-sref="home" class="btn btn-default btn-lg" type="submit">Back</button>
+    </div>
+
+
+    <img src="images/path.jpg" class="bg">
+
+    <div class="backgroundTitle" "col-xs-6 col-md-12" >
+        <h1>Choose a different background for your to-do list!</h1>
+    </div>
+
+    <!-- Change the background image -->
+    <div class="backgroundOptions" "col-xs-6 col-md-4">
+        <div class="checkbox" ng-repeat="photo in photos">
+            <label>
+                <input type="checkbox" ng-model="photo.checked" ng-click="choosePhoto($index, photos)"> {{photo.type}} 
+                <span ng-show="photo.checked">
+                    <img src="{{photo.url}}" class="bg">
+                </span>
+           </label>
+        </div>
+    </div>                
+
+</div>

@@ -1,0 +1,50 @@
+<div ng-controller="MainController">
+    
+    <img src="images/path.jpg" class="bg">
+
+
+    <div class="container">
+        <!-- HEADER AND TODO COUNT -->
+        <div class="jumbotron text-center">        
+            <h1>Things I need to do: <span class="label label-info">{{ todos.length }}</span></h1>
+        </div>
+
+        <!-- FORM TO CREATE TODOS -->
+        <div id="todo-form" class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <input type="text" class="form-control input-lg text-center" placeholder="Add item" ng-model="formData.text">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Add</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- TODO LIST -->
+        <div class="col-sm-4 col-sm-offset-4" id="outer-todo">
+            <div id="todo-list" class="row">
+                <div class="col-sm-12 col-sm-offset-4" id="inner-todo">
+                    <!-- LOOP OVER THE TODOS IN $scope.todos -->
+                    <div class="checkboxHome" ng-repeat="todo in todos">
+                        <label>
+                            <input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
+                       </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="toOtherPage">
+            <button ui-sref="photo" class="btn btn-default btn-lg" type="submit">Change<br>Background</button>
+        </div>
+
+        <div id="todo-delete" class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <p>(Click the checkbox to delete an item)</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
